@@ -310,6 +310,25 @@ img {
     border-radius: 1rem;
     font-weight: 600;
 }
+/* REGISTRO */
+.registration .register-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.register-card {
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 2rem;
+  box-shadow: var(--shadow-sm);
+}
+#hubspot-form-container {
+  width: 100%;
+  min-height: 200px;
+}
 
 /* FOOTER  */
 .footer { padding: 4rem 0 2rem; }
