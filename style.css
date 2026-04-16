@@ -192,41 +192,25 @@ img {
 .faq-answer p { padding: 0 1.5rem 1.5rem 1.5rem; color: var(--text-muted); font-size: 0.95rem; }
 .faq-item.active .faq-answer { max-height: 300px; }
 
-/* FORMULARIO */
-.register-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
-.register-info h2 { font-size: 2.5rem; margin-bottom: 1rem; }
-.register-info .subtitle { font-size: 1.125rem; color: var(--text-muted); margin-bottom: 2rem; }
-.clean-list { list-style: none; display: flex; flex-direction: column; gap: 1rem; }
-.clean-list li { display: flex; align-items: center; gap: 0.5rem; color: var(--text-main); font-weight: 500; }
-.clean-list i { color: var(--secondary-color); width: 20px; }
-
-.register-card { background: #fff; padding: 2.5rem; border-radius: var(--radius-md); border: 1px solid var(--border-color); box-shadow: var(--shadow-md); }
-.hs-form { display: flex; flex-direction: column; gap: 1.5rem; }
-.form-row { display: flex; gap: 1rem; }
-.form-group { display: flex; flex-direction: column; flex: 1; }
-.form-group label { font-size: 0.875rem; font-weight: 600; margin-bottom: 0.5rem; color: var(--text-main); }
-.form-group input[type="text"], .form-group input[type="email"] { padding: 0.75rem 1rem; border: 1px solid var(--border-color); border-radius: var(--radius-sm); font-family: var(--font-family); }
-.form-group input:focus { outline: none; border-color: var(--primary-color); }
-.flex-group { flex-direction: row; align-items: center; gap: 0.5rem; }
-.flex-group input { width: 18px; height: 18px; }
-.flex-group label { margin-bottom: 0; font-weight: 400; color: var(--text-muted); }
-.flex-group a { color: var(--primary-color); text-decoration: underline; }
-
-/* FORMULARIO HUBSPOT - ECOCYCLE */
+/* CONTENEDOR */
 .ecocycle-hubspot-form {
     width: 100%;
 }
 
-.ecocycle-hubspot-form .hs-form-frame {
-    width: 100%;
+/* OCULTAR MARCA/TEXTO EXTRA DE HUBSPOT */
+.ecocycle-hubspot-form .hs-form__powered-by,
+.ecocycle-hubspot-form .hs-form-frame__branding,
+.ecocycle-hubspot-form .hs-branding,
+.ecocycle-hubspot-form .form-footer,
+.ecocycle-hubspot-form .hsfc-Step__footer,
+.ecocycle-hubspot-form [data-test-id="hs-form-powered-by-text"],
+.ecocycle-hubspot-form [data-generated-by],
+.ecocycle-hubspot-form .legal-consent-container .hs-richtext + div {
+    display: none !important;
 }
 
-.ecocycle-hubspot-form iframe,
+/* CAMPOS */
 .ecocycle-hubspot-form form {
-    width: 100% !important;
-}
-
-.ecocycle-hubspot-form .hs-form {
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -239,7 +223,7 @@ img {
 .ecocycle-hubspot-form label {
     display: block;
     font-weight: 600;
-    color: #0f172a;
+    color: #24324a;
     margin-bottom: 0.5rem;
     font-size: 0.95rem;
 }
@@ -251,12 +235,13 @@ img {
 .ecocycle-hubspot-form select {
     width: 100%;
     padding: 0.95rem 1rem;
-    border: 1px solid #d1d5db;
-    border-radius: 0.9rem;
+    border: 1px solid #d8dde6;
+    border-radius: 0.75rem;
     background: #ffffff;
-    color: #0f172a;
+    color: #24324a;
     font-family: 'Inter', sans-serif;
     font-size: 1rem;
+    box-sizing: border-box;
     transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -268,6 +253,24 @@ img {
     box-shadow: 0 0 0 3px rgba(21, 122, 110, 0.12);
 }
 
+/* CHECKBOX LEGAL */
+.ecocycle-hubspot-form .inputs-list {
+    list-style: none;
+    padding: 0;
+    margin: 0.5rem 0 0;
+}
+
+.ecocycle-hubspot-form .inputs-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.65rem;
+}
+
+.ecocycle-hubspot-form input[type="checkbox"] {
+    margin-top: 0.25rem;
+}
+
+/* BOTÓN ECOCYCLE */
 .ecocycle-hubspot-form .hs-button,
 .ecocycle-hubspot-form input[type="submit"] {
     width: 100%;
@@ -281,6 +284,7 @@ img {
     font-family: 'Inter', sans-serif !important;
     cursor: pointer;
     transition: background 0.2s ease, transform 0.2s ease;
+    box-shadow: none !important;
 }
 
 .ecocycle-hubspot-form .hs-button:hover,
@@ -289,19 +293,15 @@ img {
     transform: translateY(-1px);
 }
 
+/* TEXTO LEGAL */
 .ecocycle-hubspot-form .legal-consent-container,
 .ecocycle-hubspot-form .hs-richtext {
-    font-size: 0.9rem;
+    font-size: 0.92rem;
     color: #475569;
     line-height: 1.5;
 }
 
-.ecocycle-hubspot-form .hs-error-msg {
-    color: #dc2626;
-    font-size: 0.85rem;
-    margin-top: 0.35rem;
-}
-
+/* MENSAJE DE ÉXITO */
 .ecocycle-hubspot-form .submitted-message {
     background: #ecfdf5;
     border: 1px solid #86efac;
@@ -310,6 +310,7 @@ img {
     border-radius: 1rem;
     font-weight: 600;
 }
+
 /* FOOTER  */
 .footer { padding: 4rem 0 2rem; }
 .footer-bottom-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; }

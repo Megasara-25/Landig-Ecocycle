@@ -236,14 +236,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <!-- REGISTRATION FORM SECTION -->
         <section id="registro" class="registration section-padding bg-light">
             <div class="container register-layout">
-                    <div class="register-card fade-in">
-                    <div class="ecocycle-hubspot-form">
-                    <script src="https://js.hsforms.net/forms/embed/51220906.js" defer></script>
-                    <div class="hs-form-frame" 
-                        data-region="na1" 
-                        data-form-id="b1123906-57da-47a0-b343-14e0c8cef845" 
-                        data-portal-id="51220906">
-                    </div>
+                <div class="register-card fade-in">
+                    <div id="hubspot-form-container" class="ecocycle-hubspot-form"></div>
                 </div>
             </div>
         </section>
@@ -297,5 +291,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </footer>
 
     <script src="script.js"></script>
+    <script src="https://js.hsforms.net/forms/embed/51220906.js" defer></script>
+        <script>
+        window.addEventListener('load', function () {
+            hbspt.forms.create({
+                region: "na1",
+                portalId: "51220906",
+                formId: "b1123906-57da-47a0-b343-14e0c8cef845",
+                target: "#hubspot-form-container"
+            });
+        });
+        </script>
 </body>
 </html>
