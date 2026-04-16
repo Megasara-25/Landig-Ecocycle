@@ -246,3 +246,59 @@ img {
   .form-row { flex-direction: column; }
   .footer-legal { flex-direction: column; gap: 1rem; text-align: center; }
 }
+/* TESTIMONIOS */
+.testimonials {
+    background: #f8fafc;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+    margin-top: 3rem;
+}
+
+.testimonial-card {
+    background: #ffffff;
+    border: 1px solid #dbe7df;
+    border-radius: 1.25rem;
+    padding: 2rem 1.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 8px 30px rgba(15, 118, 110, 0.06);
+}
+
+.testimonial-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 35px rgba(15, 118, 110, 0.12);
+}
+
+.testimonial-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    background: #dcfce7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #157a6e;
+    margin-bottom: 1.25rem;
+}
+
+.testimonial-card p {
+    color: #334155;
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 1.25rem;
+}
+
+.testimonial-card h4 {
+    color: #0f172a;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 0.35rem;
+}
+
+.testimonial-card span {
+    color: #64748b;
+    font-size: 0.9rem;
+}
