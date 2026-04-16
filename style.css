@@ -197,17 +197,6 @@ img {
     width: 100%;
 }
 
-/* OCULTAR MARCA/TEXTO EXTRA DE HUBSPOT */
-.ecocycle-hubspot-form .hs-form__powered-by,
-.ecocycle-hubspot-form .hs-form-frame__branding,
-.ecocycle-hubspot-form .hs-branding,
-.ecocycle-hubspot-form .form-footer,
-.ecocycle-hubspot-form .hsfc-Step__footer,
-.ecocycle-hubspot-form [data-test-id="hs-form-powered-by-text"],
-.ecocycle-hubspot-form [data-generated-by],
-.ecocycle-hubspot-form .legal-consent-container .hs-richtext + div {
-    display: none !important;
-}
 
 /* CAMPOS */
 .ecocycle-hubspot-form form {
