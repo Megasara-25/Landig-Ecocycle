@@ -1,10 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Inicializar iconos Lucide
     if (window.lucide) {
         lucide.createIcons();
     }
 
-    // Toggle menú móvil
     const menuToggle = document.querySelector('.menu-toggle');
     const navMenu = document.querySelector('.nav-menu');
 
@@ -14,7 +12,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Scroll suave para enlaces internos
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             const targetSelector = this.getAttribute('href');
@@ -34,7 +31,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // FAQ Accordion
     const faqItems = document.querySelectorAll('.faq-item');
 
     faqItems.forEach(item => {
@@ -42,10 +38,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (button) {
             button.addEventListener('click', () => {
+                const isOpening = !item.classList.contains('active');
+
                 faqItems.forEach(i => {
                     if (i !== item) i.classList.remove('active');
                 });
+
                 item.classList.toggle('active');
+
+                if (isOpening) {
+                    window.dataLayer = window.dataLayer || [];
+                    window.dataLayer.push({
+                        event: 'faq_open',
+                        faq_name: button.getAttribute('data-faq') || button.textContent.trim()
+                    });
+                }
             });
         }
     });

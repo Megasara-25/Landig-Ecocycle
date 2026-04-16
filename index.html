@@ -66,8 +66,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <h1>Convierte tu reciclaje en recompensas</h1>
                     <p class="hero-subtitle">EcoCycle convierte cada acción sostenible en una experiencia medible. Registra tus materiales reciclables, acumula ecopuntos y recibe beneficios reales.</p>
                     <div class="hero-buttons">
-                        <a href="#registro" class="btn btn-primary lg">Quiero unirme</a>
-                        <a href="#como-funciona" class="btn btn-outline lg">Ver cómo funciona</a>
+                        <a href="#registro" id="btn-hero-registro" class="btn btn-primary lg">Quiero unirme</a>
+                        <a href="#como-funciona" id="btn-hero-como-funciona" class="btn btn-outline lg">Ver cómo funciona</a>
                     </div>
                 </div>
                 <div class="hero-image fade-in">
@@ -117,7 +117,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <p>Miles de personas ya están sacando provecho de separar y clasificar en casa. Sé parte de la iniciativa de ecología que te premia de verdad.</p>
                 </div>
                 <div class="cta-action">
-                    <a href="#registro" class="btn btn-white lg">Empieza con EcoCycle</a>
+                    <a href="#registro" id="btn-cta-intermedio" class="btn btn-white lg">Empieza con EcoCycle</a>
                 </div>
             </div>
         </section>
@@ -203,7 +203,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </div>
                 <div class="faq-accordion fade-in">
                     <div class="faq-item">
-                        <button class="faq-question">
+                        <button class="faq-question" data-faq="materiales">
                             ¿Qué materiales puedo registrar? 
                             <i data-lucide="chevron-down"></i>
                         </button>
@@ -212,7 +212,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         </div>
                     </div>
                     <div class="faq-item">
-                        <button class="faq-question">
+                        <button class="faq-question" data-faq="ecopuntos">
                             ¿Cómo gano y canjeo mis ecopuntos? 
                             <i data-lucide="chevron-down"></i>
                         </button>
@@ -221,7 +221,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         </div>
                     </div>
                     <div class="faq-item">
-                        <button class="faq-question">
+                        <button class="faq-question" data-faq="registro-gratis">
                             ¿Tiene algún costo registrarme en EcoCycle? 
                             <i data-lucide="chevron-down"></i>
                         </button>
@@ -262,7 +262,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div class="container fade-in">
                 <h2>No dejes pasar esta oportunidad</h2>
                 <p>Cada día que no reciclas es una oportunidad perdida para el planeta y para ganar beneficios. Da el primer paso hoy y empieza a transformar tu impacto.</p>
-                <a href="#registro" class="btn btn-white lg">Hacer mi registro ahora</a>
+                <a href="#registro" id="btn-cta-final" class="btn btn-white lg">Hacer mi registro ahora</a>
             </div>
         </section>
     </main>
