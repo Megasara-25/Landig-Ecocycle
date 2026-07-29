@@ -139,7 +139,6 @@ La landing page incluye integración con servicios externos. Su funcionamiento c
 
 ## Mejoras futuras
 
-* Corregir el nombre del repositorio a `Landing-Ecocycle`.
 * Publicar el proyecto mediante GitHub Pages.
 * Agregar una política de privacidad funcional.
 * Mejorar la accesibilidad del formulario.
