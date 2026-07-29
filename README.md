@@ -3,6 +3,7 @@
 Landing page responsive para una iniciativa digital que promueve el reciclaje mediante un sistema de ecopuntos, recompensas y beneficios para los usuarios.
 
 El proyecto integra diseño frontend, interacción con JavaScript, captura de registros mediante HubSpot Forms y medición de eventos mediante Google Tag Manager.
+[![Ver proyecto](https://img.shields.io/badge/Ver%20proyecto-EcoCycle-2ea44f?style=for-the-badge&logo=github)](https://megasara-25.github.io/Landig-Ecocycle/)
 
 ## Descripción
 
