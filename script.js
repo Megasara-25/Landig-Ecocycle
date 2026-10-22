@@ -6,26 +6,66 @@ document.addEventListener('DOMContentLoaded', () => {
     const menuToggle = document.querySelector('.menu-toggle');
     const navMenu = document.querySelector('.nav-menu');
 
+    const setMenuOpen = (isOpen) => {
+        navMenu?.classList.toggle('active', isOpen);
+        menuToggle?.setAttribute('aria-expanded', String(isOpen));
+        menuToggle?.setAttribute('aria-label', isOpen ? 'Cerrar menú' : 'Abrir menú');
+    };
+
     if (menuToggle && navMenu) {
         menuToggle.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
+            setMenuOpen(!navMenu.classList.contains('active'));
         });
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && navMenu.classList.contains('active')) {
+                setMenuOpen(false);
+                menuToggle.focus();
+            }
+        });
+
+        document.addEventListener('click', (event) => {
+            if (navMenu.classList.contains('active') &&
+                !navMenu.contains(event.target) &&
+                !menuToggle.contains(event.target)) {
+                setMenuOpen(false);
+            }
+        });
+
+        window.matchMedia('(min-width: 761px)').addEventListener('change', () => setMenuOpen(false));
+    }
+
+    const revealItems = document.querySelectorAll('.fade-in');
+    if ('IntersectionObserver' in window && revealItems.length) {
+        document.body.classList.add('has-scroll-reveal');
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12, rootMargin: '0px 0px -32px 0px' });
+
+        revealItems.forEach((item) => revealObserver.observe(item));
+    } else {
+        revealItems.forEach((item) => item.classList.add('is-visible'));
     }
 
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             const targetSelector = this.getAttribute('href');
-            const target = document.querySelector(targetSelector);
+            const target = targetSelector && targetSelector !== '#' ? document.querySelector(targetSelector) : null;
 
             if (target) {
                 e.preventDefault();
                 target.scrollIntoView({
-                    behavior: 'smooth',
+                    behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
                     block: 'start'
                 });
 
                 if (navMenu) {
-                    navMenu.classList.remove('active');
+                    setMenuOpen(false);
                 }
             }
         });
@@ -41,10 +81,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 const isOpening = !item.classList.contains('active');
 
                 faqItems.forEach(i => {
-                    if (i !== item) i.classList.remove('active');
+                    if (i !== item) {
+                        i.classList.remove('active');
+                        i.querySelector('.faq-question')?.setAttribute('aria-expanded', 'false');
+                        i.querySelector('.faq-answer')?.setAttribute('aria-hidden', 'true');
+                    }
                 });
 
                 item.classList.toggle('active');
+                button.setAttribute('aria-expanded', String(item.classList.contains('active')));
+                item.querySelector('.faq-answer')?.setAttribute('aria-hidden', String(!item.classList.contains('active')));
 
                 if (isOpening) {
                     window.dataLayer = window.dataLayer || [];
