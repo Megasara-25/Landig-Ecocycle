@@ -10,6 +10,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- End Google Tag Manager -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="EcoCycle: aprende a separar residuos con nuestros guardianes, descubre cómo funciona el reciclaje y conoce las recompensas sostenibles.">
     <title>EcoCycle - Recicla, Gana, Aprende</title>
     <!-- Google Fonts: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -35,47 +36,51 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
     <!-- HEADER -->
-    <header class="header">
-        <div class="container header-container">
-            <a href="#" class="logo">
-                <img src="https://51220906.hs-sites.com/hubfs/EcoCycle.png" alt="EcoCycle Logo">
-            </a>
-            
-            <nav class="nav-menu">
-                <ul>
-                    <li><a href="#como-funciona">¿Cómo funciona?</a></li>
-                    <li><a href="#beneficios">Beneficios</a></li>
-                    <li><a href="#faq">FAQ!</a></li>
-                </ul>
-            </nav>
-            
-            <div class="header-actions">
-                <a href="#registro" class="btn btn-primary">Regístrate Gratis</a>
-                <button class="menu-toggle" aria-label="Abrir menú">
-                    <i data-lucide="menu"></i>
-                </button>
-            </div>
-        </div>
-    </header>
-
+    <header class="header modern-header"><div class="container header-container">
+      <a href="#inicio" class="logo"><img src="assets/ecocycle-logo-light.png" alt="EcoCycle - Recicla, gana, aprende" width="210" height="80"></a>
+      <nav class="nav-menu" id="main-nav" aria-label="Navegación principal"><ul>
+        <li><a href="#inicio">Inicio</a></li><li><a href="#personajes">Personajes</a></li>
+        <li><a href="#como-funciona">Cómo reciclar</a></li><li><a href="#beneficios">Beneficios</a></li>
+        <li><a href="#faq">Preguntas frecuentes</a></li><li><a href="#registro">Sobre EcoCycle</a></li>
+      </ul></nav>
+      <div class="header-actions"><a href="#registro" class="btn btn-primary">Únete a EcoCycle</a>
+        <button class="menu-toggle" type="button" aria-label="Abrir menú" aria-controls="main-nav" aria-expanded="false"><i data-lucide="menu"></i></button></div>
+    </div></header>
     <main>
-        <!-- HERO SECTION -->
-        <section class="hero section-padding">
-            <div class="container hero-content">
-                <div class="hero-text fade-in">
-                    <h1>Convierte tu reciclaje en recompensas</h1>
-                    <p class="hero-subtitle">EcoCycle convierte cada acción sostenible en una experiencia medible. Registra tus materiales reciclables, acumula ecopuntos y recibe beneficios reales.</p>
-                    <div class="hero-buttons">
-                        <a href="#registro" id="btn-hero-registro" class="btn btn-primary lg">Quiero unirme</a>
-                        <a href="#como-funciona" id="btn-hero-como-funciona" class="btn btn-outline lg">Ver cómo funciona</a>
+      <section id="inicio" class="hero-modern" aria-labelledby="hero-heading">
+        <div class="hero-overlay"><div class="container hero-modern-inner">
+          <span class="hero-eyebrow">PEQUEÑOS RESIDUOS</span><h1 id="hero-heading">GRANDES<br><em>CAMBIOS</em></h1>
+          <p>Conoce a nuestros guardianes, aprende a reciclar y descubre cómo tus acciones pueden transformar el planeta.</p>
+          <a href="#personajes" class="hero-action">Conoce a los personajes <span aria-hidden="true">→</span></a>
+        </div></div>
+      </section>
+      <section id="personajes" class="characters-section" aria-labelledby="characters-heading">
+        <div class="container"><h2 id="characters-heading" class="sr-only">Guardianes del reciclaje</h2>
+                    <div id="characters-list" class="characters-list" role="group" aria-roledescription="carrusel" aria-label="Selecciona un guardián"></div>
+                    <div class="character-controls" role="group" aria-label="Navegación de guardianes">
+                        <button class="character-arrow" type="button" data-character-prev aria-label="Guardián anterior"><i data-lucide="arrow-left"></i></button>
+                        <div class="character-pagination" aria-label="Seleccionar guardián"></div>
+                        <span id="character-position" class="character-position" aria-live="polite">1 de 6</span>
+                        <button class="character-arrow" type="button" data-character-next aria-label="Guardián siguiente"><i data-lucide="arrow-right"></i></button>
                     </div>
-                </div>
-                <div class="hero-image fade-in">
-                    <img src="https://51220906.hs-sites.com/hubfs/EcoCycle.png" alt="EcoCycle Branding" class="clean-hero-img">
-                </div>
+          <div class="character-profile" id="character-profile">
+            <div class="character-art"><img id="character-image" src="assets/personajes/polaris.jpeg" alt="Polaris, guardián del plástico" width="602" height="894" loading="lazy"></div>
+            <div class="character-content">
+              <p class="character-kicker">GUARDIANES DE ECOCYCLE</p>
+              <h2 id="character-name">POLARIS</h2><p id="character-role" class="character-role">HÉROE DEL PLÁSTICO</p>
+              <p id="character-quote" class="character-quote">Doy una segunda vida a lo que parece desechable.</p>
+              <p id="character-description"></p>
+              <div class="material-display"><img id="character-material-icon" src="assets/Iconos_EcoCycle/01_Polaris_Plastico.png" alt="Icono de plástico" width="76" height="76"><span>MATERIAL <strong id="character-material">PLÁSTICO</strong></span></div>
+              <div class="learning-tabs" role="tablist" aria-label="Aprende sobre el material">
+                                <button id="tab-reciclar" class="learning-tab active" role="tab" aria-controls="learning-panel" aria-selected="true" data-tab="reciclar">Qué reciclar</button>
+                                <button id="tab-preparar" class="learning-tab" role="tab" aria-controls="learning-panel" aria-selected="false" data-tab="preparar">Cómo prepararlo</button>
+                                <button id="tab-evitar" class="learning-tab" role="tab" aria-controls="learning-panel" aria-selected="false" data-tab="evitar">Qué evitar</button>
+                                <button id="tab-entregar" class="learning-tab" role="tab" aria-controls="learning-panel" aria-selected="false" data-tab="entregar">Dónde entregarlo</button>
+                            </div><div id="learning-panel" role="tabpanel" aria-labelledby="tab-reciclar" aria-live="polite" class="learning-panel" tabindex="0"></div>
             </div>
-        </section>
-
+          </div>
+        </div>
+      </section>
         <!-- BENEFITS SECTION -->
         <section id="beneficios" class="benefits section-padding bg-light">
             <div class="container">
@@ -129,7 +134,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <span class="badge">Paso a Paso</span>
                     <h2>Así funciona EcoCycle</h2>
                 </div>
-                
+
                 <div class="steps-grid">
                     <div class="step-card fade-in">
                         <div class="step-number">1</div>
@@ -203,29 +208,29 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </div>
                 <div class="faq-accordion fade-in">
                     <div class="faq-item">
-                        <button class="faq-question" data-faq="materiales">
-                            ¿Qué materiales puedo registrar? 
+                        <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-materiales" data-faq="materiales">
+                            ¿Qué materiales puedo registrar?
                             <i data-lucide="chevron-down"></i>
                         </button>
-                        <div class="faq-answer">
+                        <div class="faq-answer" id="faq-answer-materiales" aria-hidden="true">
                             <p>Aceptamos plásticos, vidrio, cartón, papel y latas. Es de vital importancia que todos los materiales estén limpios y secos antes de ser clasificados y registrados.</p>
                         </div>
                     </div>
                     <div class="faq-item">
-                        <button class="faq-question" data-faq="ecopuntos">
-                            ¿Cómo gano y canjeo mis ecopuntos? 
+                        <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-ecopuntos" data-faq="ecopuntos">
+                            ¿Cómo gano y canjeo mis ecopuntos?
                             <i data-lucide="chevron-down"></i>
                         </button>
-                        <div class="faq-answer">
+                        <div class="faq-answer" id="faq-answer-ecopuntos" aria-hidden="true">
                             <p>Ganas puntos cada vez que reportas material reciclado de manera correcta en el módulo. Luego podrás canjear esos puntos por beneficios tangibles, insignias o descuentos en nuestros comercios aliados.</p>
                         </div>
                     </div>
                     <div class="faq-item">
-                        <button class="faq-question" data-faq="registro-gratis">
-                            ¿Tiene algún costo registrarme en EcoCycle? 
+                        <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-registro-gratis" data-faq="registro-gratis">
+                            ¿Tiene algún costo registrarme en EcoCycle?
                             <i data-lucide="chevron-down"></i>
                         </button>
-                        <div class="faq-answer">
+                        <div class="faq-answer" id="faq-answer-registro-gratis" aria-hidden="true">
                             <p>No, la plataforma es 100% gratuita siempre. Nuestro principal interés es promover de forma orgánica la cultura del reciclaje y premiar las buenas acciones medioambientales.</p>
                         </div>
                     </div>
@@ -237,8 +242,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <section id="registro" class="registration section-padding bg-light">
             <div class="container register-layout">
                 <div class="register-info fade-in">
-                    <h2>Crea tu cuenta gratis</h2>
-                    <p class="subtitle">Solo te tomará un minuto, es rápido, sencillo y seguro. Empieza a acumular beneficios hoy.</p>
+                    <h2>Conoce más sobre EcoCycle</h2>
+                    <p class="subtitle">Déjanos tus datos en nuestro formulario oficial de HubSpot para conocer el proyecto y recibir información.</p>
                     <ul class="clean-list">
                         <li><i data-lucide="check"></i> Proceso seguro y confiable</li>
                         <li><i data-lucide="check"></i> Sin compromisos escondidos</li>
@@ -248,12 +253,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <div class="register-card fade-in">
                     <div class="ecocycle-hubspot-form">
                     <script src="https://js.hsforms.net/forms/embed/51220906.js" defer></script>
-                    <div class="hs-form-frame" 
-                        data-region="na1" 
-                        data-form-id="b1123906-57da-47a0-b343-14e0c8cef845" 
+                    <div class="hs-form-frame"
+                        data-region="na1"
+                        data-form-id="b1123906-57da-47a0-b343-14e0c8cef845"
                         data-portal-id="51220906">
                     </div>
                 </div>
+            </div>
             </div>
         </section>
 
@@ -262,7 +268,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div class="container fade-in">
                 <h2>No dejes pasar esta oportunidad</h2>
                 <p>Cada día que no reciclas es una oportunidad perdida para el planeta y para ganar beneficios. Da el primer paso hoy y empieza a transformar tu impacto.</p>
-                <a href="#registro" id="btn-cta-final" class="btn btn-white lg">Hacer mi registro ahora</a>
+                <a href="#registro" id="btn-cta-final" class="btn btn-white lg">Quiero conocer más</a>
             </div>
         </section>
     </main>
@@ -272,10 +278,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="container">
             <div class="footer-bottom-grid">
                 <div class="footer-info">
-                    <img src="https://51220906.hs-sites.com/hubfs/EcoCycle.png" alt="EcoCycle Logo" style="height: 35px; filter: grayscale(1) brightness(3); margin-bottom: 1rem;">
+                    <img src="assets/ecocycle-logo-light.png" alt="EcoCycle Logo" style="height: 42px; margin-bottom: 1rem;">
                     <p style="color: #94a3b8; font-size: 0.9rem; max-width: 300px;">Haz que cada acción sostenible cuente desde hoy.</p>
                 </div>
-                
+
                 <div class="footer-group">
                     <h4>Navegación</h4>
                     <ul>
@@ -298,13 +304,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div class="footer-legal">
                 <p>&copy; 2026 EcoCycle. Proyecto sostenible por Sara Patarroyo.</p>
                 <div class="socials">
-                    <a href="#"><i data-lucide="facebook"></i></a>
-                    <a href="#"><i data-lucide="instagram"></i></a>
+
+
                 </div>
             </div>
         </div>
     </footer>
 
+    <script src="personajes.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

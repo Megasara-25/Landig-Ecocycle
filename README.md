@@ -1,173 +1,56 @@
-# EcoCycle
+# EcoCycle - Landing modernizada
 
-Landing page responsive para una iniciativa digital que promueve el reciclaje mediante un sistema de ecopuntos, recompensas y beneficios para los usuarios.
+Esta entrega actualiza el repositorio HTML/CSS/JS existente; no reemplaza la aplicación móvil React/Supabase.
 
-El proyecto integra diseño frontend, interacción con JavaScript, captura de registros mediante HubSpot Forms y medición de eventos mediante Google Tag Manager.
+## Ejecución
 
-## Descripción
+Abra `index.html` con un servidor estático (por ejemplo, `python -m http.server 8000`) o publique el contenido de esta carpeta en GitHub Pages. No requiere npm.
 
-EcoCycle busca incentivar prácticas sostenibles permitiendo que los usuarios registren materiales reciclables, acumulen ecopuntos y accedan a diferentes recompensas.
+## Cambios
 
-La landing page presenta el funcionamiento de la iniciativa, sus beneficios, testimonios, preguntas frecuentes y un formulario de registro.
+- Portada con ilustración de los seis guardianes de `assets/personajes/`.
+- Selector dinámico, accesible y responsive de seis guardianes en `personajes.js`.
+- Iconos oficiales de `assets/Iconos_EcoCycle/`, asociados por nombre real.
+- Se mantienen las secciones existentes de beneficios, cómo funciona, preguntas frecuentes y el formulario incrustado de HubSpot.
+- Se mantienen los fragmentos de GA4, GTM, Contentsquare y evento FAQ original.
+- No se agregan retos ni autenticación ficticia.
 
-El objetivo principal del proyecto es ofrecer una experiencia clara, atractiva y orientada a la conversión de visitantes en usuarios registrados.
+## Optimización responsive e interacción
 
-## Funcionalidades
+- El menú móvil funciona como panel desplegable, se cierra con Escape, al pulsar un enlace o al cambiar a escritorio, y mantiene `aria-expanded` sincronizado.
+- El selector de guardianes conserva las seis tarjetas; en anchos reducidos permite desplazamiento táctil con ajuste de tarjeta, flechas y puntos de navegación. La selección actualiza la ilustración, el material, el icono oficial y el contenido educativo.
+- Las secciones con `.fade-in` aparecen mediante `IntersectionObserver`, con aparición escalonada de tarjetas y alternativa visible cuando el API no está disponible.
+- Los botones y tarjetas tienen microinteracciones discretas; el perfil y las pestañas educativas cambian con transiciones breves, y el FAQ conserva su expansión animada.
+- Se adaptaron portada, perfil, pestañas, secciones, formulario y pie de página para pantallas pequeñas; se mantienen los anchos de contenido dentro del viewport.
+- Las pestañas educativas y el FAQ exponen estados ARIA; los enlaces y el carrusel respetan `prefers-reduced-motion`.
+- No se modificaron catálogos educativos ni imágenes; se conservaron las etiquetas, IDs de medición y scripts de GA4, GTM, Contentsquare y HubSpot. Los IDs de navegación y FAQ se añadieron para accesibilidad.
 
-* Diseño responsive.
-* Menú de navegación para dispositivos móviles.
-* Navegación mediante enlaces internos.
-* Desplazamiento suave entre secciones.
-* Sección principal con llamados a la acción.
-* Explicación del funcionamiento de EcoCycle.
-* Presentación de beneficios.
-* Sección de testimonios.
-* Preguntas frecuentes mediante acordeón.
-* Formulario de registro integrado con HubSpot.
-* Validación administrada mediante HubSpot Forms.
-* Integración de iconos mediante Lucide Icons.
-* Registro de interacciones mediante `dataLayer`.
-* Medición de apertura de preguntas frecuentes.
-* Identificación de botones principales para analítica.
-* Diseño visual orientado a sostenibilidad.
+## Verificación local
 
-## Tecnologías y herramientas
+- Se revisó la página en navegador a 320, 360, 375, 390, 414, 430, 768, 1024, 1366, 1440 y 1920 px; no se detectó desbordamiento horizontal. Se inspeccionaron visualmente capturas de móvil (320 px), tableta (768 px) y escritorio (1440 px).
+- Se comprobó abrir/cerrar el menú, cierre con Escape, navegación al siguiente guardián, unicidad de IDs FAQ, estados accesibles del acordeón, evento `faq_open`, los seis guardianes y los seis iconos de materiales.
+- Se emuló `prefers-reduced-motion` y se confirmó el desplazamiento sin animación.
+- Estas comprobaciones no envían el formulario ni verifican eventos en GA4/GTM/Contentsquare; las integraciones requieren pruebas en el sitio publicado y sus herramientas de proveedor.
 
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge\&logo=html5\&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge\&logo=css3\&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge\&logo=javascript\&logoColor=black)
-![HubSpot](https://img.shields.io/badge/HubSpot-FF7A59?style=for-the-badge\&logo=hubspot\&logoColor=white)
-![Google Tag Manager](https://img.shields.io/badge/Google%20Tag%20Manager-246FDB?style=for-the-badge\&logo=googletagmanager\&logoColor=white)
+## Integraciones que requieren validación en el sitio publicado
 
-## Conceptos aplicados
+- HubSpot portal `51220906`, formulario `b1123906-57da-47a0-b343-14e0c8cef845`: comprobar carga y envío con consentimiento y datos de prueba.
+- GA4 `G-Q0MK3Q2HMB` y GTM `GTM-P527D79D`: revisar con Tag Assistant que no se duplique `page_view` (depende de la configuración externa de GTM).
+- Contentsquare: validar con las herramientas de red y panel del proveedor.
+- Encuesta: no se identificó URL ni implementación en el ZIP original del landing. Pendiente recibir su enlace o código antes de poder integrarla.
+- El alojamiento y la política CSP pueden condicionar recursos de terceros.
 
-* Diseño responsive.
-* Maquetación semántica con HTML5.
-* Estilos con CSS3.
-* Manipulación del DOM.
-* Manejo de eventos.
-* Menú móvil.
-* Scroll suave.
-* Componentes desplegables.
-* Integración de formularios externos.
-* Personalización visual de formularios.
-* Seguimiento de eventos frontend.
-* Uso de `window.dataLayer`.
-* Optimización de llamados a la acción.
+## Archivos nuevos
 
-## Estructura del proyecto
+- `personajes.js`: catálogo y selector dinámico.
+- `assets/personajes/`: ilustraciones originales proporcionadas.
+- `assets/Iconos_EcoCycle/`: seis iconos proporcionados.
+- `assets/ecocycle-logo.png` y `assets/ecocycle-symbol.png`: imágenes corporativas proporcionadas.
 
-```text
-Landig-Ecocycle/
-├── index.html
-├── style.css
-├── script.js
-├── recursos/
-└── README.md
-```
+## Publicar en GitHub
 
-La estructura puede variar según las imágenes y recursos almacenados en el repositorio.
+Copie el contenido completo sobre el repositorio (mantenga las rutas), revise el diff en una rama, pruebe el sitio y abra un pull request. No incluya archivos privados ni credenciales.
 
-## Instalación y ejecución
+## Limitaciones
 
-### Clonar el repositorio
-
-```bash
-git clone https://github.com/Megasara-25/Landig-Ecocycle.git
-cd Landig-Ecocycle
-```
-
-Después, abre el archivo `index.html` en un navegador.
-
-Para una mejor experiencia de desarrollo, puedes utilizar la extensión Live Server de Visual Studio Code.
-
-## Integración con HubSpot
-
-El formulario de registro utiliza HubSpot Forms mediante un script externo.
-
-```html
-<script src="https://js.hsforms.net/forms/embed/PORTAL_ID.js" defer></script>
-```
-
-La integración permite:
-
-* Capturar información de usuarios.
-* Gestionar validaciones.
-* Centralizar registros.
-* Conectar la landing page con herramientas de marketing y CRM.
-
-Para reutilizar el proyecto en otra cuenta de HubSpot, es necesario reemplazar:
-
-* `data-form-id`
-* `data-portal-id`
-* La región configurada en `data-region`
-
-## Medición de eventos
-
-El proyecto utiliza `window.dataLayer` para registrar interacciones relevantes.
-
-Ejemplo:
-
-```javascript
-window.dataLayer = window.dataLayer || [];
-
-window.dataLayer.push({
-    event: "faq_open",
-    faq_name: "materiales"
-});
-```
-
-Este evento permite medir cuándo un usuario abre una pregunta frecuente.
-
-También se asignaron identificadores a diferentes llamados a la acción para facilitar su seguimiento mediante Google Tag Manager.
-
-## Uso
-
-1. El usuario ingresa a la landing page.
-2. Consulta la propuesta de EcoCycle.
-3. Revisa el funcionamiento y los beneficios.
-4. Interactúa con las preguntas frecuentes.
-5. Accede al formulario de registro.
-6. Envía su información mediante HubSpot.
-7. Las principales interacciones pueden ser registradas mediante Google Tag Manager.
-
-## Estado del proyecto
-
-Proyecto frontend funcional en etapa académica.
-
-La landing page incluye integración con servicios externos. Su funcionamiento completo depende de la disponibilidad y configuración del formulario de HubSpot.
-
-## Mejoras futuras
-
-* Publicar el proyecto mediante GitHub Pages.
-* Agregar una política de privacidad funcional.
-* Mejorar la accesibilidad del formulario.
-* Incorporar atributos ARIA.
-* Optimizar imágenes.
-* Aplicar carga diferida a recursos visuales.
-* Agregar eventos adicionales de conversión.
-* Implementar medición con Google Analytics 4.
-* Mejorar la estructura SEO.
-* Incorporar pruebas de rendimiento.
-* Crear una versión con React.
-* Integrar una API para consultar ecopuntos.
-
-## Aprendizajes obtenidos
-
-Con este proyecto fortalecí mis conocimientos en construcción de landing pages, diseño responsive, manipulación del DOM e integración de herramientas externas.
-
-También aprendí a conectar formularios de HubSpot y a preparar eventos de interacción para su medición mediante Google Tag Manager.
-
-## Autora
-
-**Sara Valeria Patarroyo Alba**
-
-Estudiante de Tecnología en Desarrollo de Software y desarrolladora frontend en formación.
-
-* GitHub: [Megasara-25](https://github.com/Megasara-25)
-* LinkedIn: [Sara Valeria Patarroyo Alba](https://www.linkedin.com/in/sara-valeria-891625186/)
-* Correo: [spatarroyoalba@gmail.com](mailto:spatarroyoalba@gmail.com)
-
-## Licencia
-
-Este proyecto fue desarrollado con fines educativos y académicos.
+No se ejecutaron pruebas end-to-end contra servicios externos ni se modificó el repositorio remoto. La imagen de portada usa la ilustración grupal suministrada, no la imagen de referencia generada. Los textos educativos son orientativos: consulte la aceptación específica en cada punto de recolección.
