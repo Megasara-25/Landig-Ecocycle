@@ -5,7 +5,7 @@ const GUARDIANES = [
     "material": "Plástico",
     "icono": "assets/Iconos_EcoCycle/01_Polaris_Plastico.png",
     "avatar": "assets/personajes/polaris-icono.jpeg",
-    "imagen": "assets/personajes/polaris.jpeg",
+    "imagen": "assets/personajes/polaris.png",
     "descripcion": "Transforma residuos plásticos en nuevas oportunidades.",
     "frase": "Doy una segunda vida a lo que parece desechable.",
     "reciclar": [
@@ -34,7 +34,7 @@ const GUARDIANES = [
     "material": "Cartón",
     "icono": "assets/Iconos_EcoCycle/02_Tetrax_Carton.png",
     "avatar": "assets/personajes/tetrax-icono.jpeg",
-    "imagen": "assets/personajes/tetrax.jpeg",
+    "imagen": "assets/personajes/tetrax.png",
     "descripcion": "Protege los recursos dando nueva vida al cartón.",
     "frase": "Cada caja puede tener otra historia.",
     "reciclar": [
@@ -62,7 +62,7 @@ const GUARDIANES = [
     "material": "Papel",
     "icono": "assets/Iconos_EcoCycle/03_Paperyus_Papel.png",
     "avatar": "assets/personajes/paperyus-icono.jpeg",
-    "imagen": "assets/personajes/paperyus.jpeg",
+    "imagen": "assets/personajes/paperyus.png",
     "descripcion": "Convierte las hojas usadas en nuevas posibilidades.",
     "frase": "Las ideas también se pueden reciclar.",
     "reciclar": [
@@ -90,7 +90,7 @@ const GUARDIANES = [
     "material": "Metales y latas",
     "icono": "assets/Iconos_EcoCycle/04_Ferrax_Metales_y_Latas.png",
     "avatar": "assets/personajes/ferrax-icono.jpeg",
-    "imagen": "assets/personajes/ferrax.jpeg",
+    "imagen": "assets/personajes/ferrax.png",
     "descripcion": "Recupera metales para reducir la necesidad de nuevas materias primas.",
     "frase": "La fuerza está en recuperar lo que usamos.",
     "reciclar": [
@@ -118,7 +118,7 @@ const GUARDIANES = [
     "material": "Pilas y baterías",
     "icono": "assets/Iconos_EcoCycle/05_Voltaje_Pilas_y_Baterias.png",
     "avatar": "assets/personajes/voltaje-icono.jpeg",
-    "imagen": "assets/personajes/voltaje.jpeg",
+    "imagen": "assets/personajes/voltaje.png",
     "descripcion": "Ayuda a evitar que las pilas terminen contaminando el ambiente.",
     "frase": "La energía también necesita un destino responsable.",
     "reciclar": [
@@ -146,7 +146,7 @@ const GUARDIANES = [
     "material": "Vidrio",
     "icono": "assets/Iconos_EcoCycle/06_Flurosil_Vidrio.png",
     "avatar": "assets/personajes/flurosil-icono.jpeg",
-    "imagen": "assets/personajes/flurosil.jpeg",
+    "imagen": "assets/personajes/flurosil.png",
     "descripcion": "Protege el entorno recuperando envases de vidrio.",
     "frase": "Una nueva forma para un material que perdura.",
     "reciclar": [
