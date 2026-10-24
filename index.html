@@ -11,12 +11,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="EcoCycle: aprende a separar residuos con nuestros guardianes, descubre cómo funciona el reciclaje y conoce las recompensas sostenibles.">
     <title>EcoCycle - Recicla, Gana, Aprende</title>
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-
     <script src="https://unpkg.com/lucide@latest"></script>
     <script src="https://t.contentsquare.net/uxa/fdbdc60a359a4.js"></script>
 </head>
@@ -58,29 +56,66 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div></div>
       </section>
       <section id="personajes" class="characters-section" aria-labelledby="characters-heading">
-        <div class="container"><h2 id="characters-heading" class="sr-only">Guardianes del reciclaje</h2>
-                    <div id="characters-list" class="characters-list" role="group" aria-roledescription="carrusel" aria-label="Selecciona un guardián"></div>
-                    <div class="character-controls" role="group" aria-label="Navegación de guardianes">
-                        <button class="character-arrow" type="button" data-character-prev aria-label="Guardián anterior"><i data-lucide="arrow-left"></i></button>
-                        <div class="character-pagination" aria-label="Seleccionar guardián"></div>
-                        <span id="character-position" class="character-position" aria-live="polite">1 de 6</span>
-                        <button class="character-arrow" type="button" data-character-next aria-label="Guardián siguiente"><i data-lucide="arrow-right"></i></button>
-                    </div>
+        <div class="container">
+          <h2 id="characters-heading" class="characters-heading">Guardianes que te enseñan a reciclar</h2>
           <div class="character-profile" id="character-profile">
-            <div class="character-art"><img id="character-image" src="assets/personajes/polaris.png" alt="Polaris, guardián del plástico" width="602" height="894" loading="lazy"></div>
-            <div class="character-content">
+            <div class="character-intro">
               <p class="character-kicker">GUARDIANES DE ECOCYCLE</p>
-              <h2 id="character-name">POLARIS</h2><p id="character-role" class="character-role">HÉROE DEL PLÁSTICO</p>
-              <p id="character-quote" class="character-quote">Doy una segunda vida a lo que parece desechable.</p>
-              <p id="character-description"></p>
-              <div class="material-display"><img id="character-material-icon" src="assets/Iconos_EcoCycle/01_Polaris_Plastico.png" alt="Icono de plástico" width="76" height="76"><span>MATERIAL <strong id="character-material">PLÁSTICO</strong></span></div>
-              <div class="learning-tabs" role="tablist" aria-label="Aprende sobre el material">
-                                <button id="tab-reciclar" class="learning-tab active" role="tab" aria-controls="learning-panel" aria-selected="true" data-tab="reciclar">Qué reciclar</button>
-                                <button id="tab-preparar" class="learning-tab" role="tab" aria-controls="learning-panel" aria-selected="false" data-tab="preparar">Cómo prepararlo</button>
-                                <button id="tab-evitar" class="learning-tab" role="tab" aria-controls="learning-panel" aria-selected="false" data-tab="evitar">Qué evitar</button>
-                                <button id="tab-entregar" class="learning-tab" role="tab" aria-controls="learning-panel" aria-selected="false" data-tab="entregar">Dónde entregarlo</button>
-                            </div><div id="learning-panel" role="tabpanel" aria-labelledby="tab-reciclar" aria-live="polite" class="learning-panel" tabindex="0"></div>
+              <h3 id="character-name">POLARIS</h3>
+              <p id="character-role" class="character-role">GUARDIÁN DEL PLÁSTICO</p>
+              <div class="material-display">
+                <img id="character-material-icon" src="assets/Iconos_EcoCycle/01_Polaris_Plastico.png" alt="" width="76" height="76">
+                <span>MATERIAL <strong id="character-material">PLÁSTICO</strong></span>
+              </div>
             </div>
+            <div class="character-art">
+              <img id="character-image" src="assets/personajes/polaris.png" alt="Polaris, guardián del plástico" width="602" height="894" fetchpriority="high">
+            </div>
+            <div class="character-summary">
+              <p id="character-quote" class="character-quote">“Doy una segunda vida a lo que parece desechable”</p>
+              <p id="character-description">Transforma residuos plasticos en nuevas oportunidades</p>
+              <ul class="character-benefits" aria-label="Beneficios de reciclar">
+                <li>Ayuda a recuperar materiales aprovechables.</li>
+                <li>Promueve una correcta separación de residuos.</li>
+                <li>Fomenta hábitos de consumo responsables.</li>
+              </ul>
+            </div>
+            <section class="guardian-video" aria-labelledby="video-heading">
+              <div class="video-heading">
+                <div>
+                  <p class="character-kicker">APRENDE CON TU GUARDIAN</p>
+                  <h4 id="video-heading">Aprende a reciclar con Polaris</h4>
+                </div>
+                <span id="video-status" class="video-status" role="status"></span>
+              </div>
+              <button class="video-preview" type="button" data-video-play aria-haspopup="dialog" aria-label="Ver video: Aprende a reciclar con Polaris">
+                <img id="video-thumbnail" src="https://i.ytimg.com/vi/AXpnghigdkU/hqdefault.jpg" alt="" loading="lazy">
+                <span class="video-preview-play" aria-hidden="true"><span></span></span>
+                <span class="video-preview-label">Ver leccion</span>
+              </button>
+            </section>
+          </div>
+
+          <div class="guardian-selector">
+            <h3 class="selector-heading">Elige un guardan</h3>
+            <div id="characters-list" class="characters-list" role="group" aria-roledescription="carrusel" aria-label="Selecciona un guardián"></div>
+            <div class="character-controls" role="group" aria-label="Navegación de guardianes">
+              <button class="character-arrow" type="button" data-character-prev aria-label="Guardián anterior"><i data-lucide="arrow-left"></i></button>
+              <div class="character-pagination" aria-label="Seleccionar guardián"></div>
+              <span id="character-position" class="character-position" aria-live="polite">1 de 6</span>
+              <button class="character-arrow" type="button" data-character-next aria-label="Guardián siguiente"><i data-lucide="arrow-right"></i></button>
+            </div>
+          </div>
+
+          <div class="learning-area">
+            <h3 class="learning-heading">Aprende a reciclar este material</h3>
+            <div class="learning-tabs" role="tablist" aria-label="Aprende sobre el material">
+              <button id="tab-reciclar" class="learning-tab active" role="tab" aria-controls="learning-panel" aria-selected="true" data-tab="reciclar">Qué reciclar</button>
+              <button id="tab-preparar" class="learning-tab" role="tab" aria-controls="learning-panel" aria-selected="false" data-tab="preparar">Cómo prepararlo</button>
+              <button id="tab-evitar" class="learning-tab" role="tab" aria-controls="learning-panel" aria-selected="false" data-tab="evitar">Qué evitar</button>
+              <button id="tab-entregar" class="learning-tab" role="tab" aria-controls="learning-panel" aria-selected="false" data-tab="entregar">Dónde entregarlo</button>
+            </div>
+            <div id="learning-panel" role="tabpanel" aria-labelledby="tab-reciclar" aria-live="polite" class="learning-panel" tabindex="0"></div>
           </div>
         </div>
       </section>
@@ -94,7 +129,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <div class="benefits-grid">
                     <div class="card fade-in">
                         <div class="card-icon"><i data-lucide="zap"></i></div>
-                        <h3>Registra rápido</h3>
+                        <h3>Registra rapido</h3>
                         <p>Reporta el tipo y la cantidad de material reciclado en pocos pasos. Diseñado para ser muy fácil de usar.</p>
                     </div>
                     <div class="card fade-in">
@@ -303,6 +338,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </div>
         </div>
     </footer>
+
+    <div id="video-modal" class="video-modal" hidden>
+      <section class="video-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="video-modal-title" tabindex="-1">
+        <header class="video-modal-header">
+          <h2 id="video-modal-title">Video educativo</h2>
+          <button class="video-modal-close" type="button" data-video-close aria-label="Cerrar reproductor">×</button>
+        </header>
+        <div id="video-player" class="video-player" aria-live="polite"></div>
+        <p id="video-modal-status" class="video-modal-status" role="status" hidden></p>
+      </section>
+    </div>
 
     <script src="personajes.js"></script>
     <script src="script.js"></script>
